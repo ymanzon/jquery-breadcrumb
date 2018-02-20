@@ -40,5 +40,7 @@ En algún componente del html, por ejemplo
 Proporcionándole la página actual en la variable page, y el texto que se desplegará en la variable text.
 Esto debe incluirse en las páginas que se agregaran al breadcrumb.
 De igual manera utiliza el font awesome para agregar iconos en lugar de textos para los breadcrumb
-aunque se puede usar cualquier tipografía definida de algun estilo, por el momento se usa este 
+aunque se puede usar cualquier tipografía definida de algun estilo, por el momento se usa este.
+
+
 ---
