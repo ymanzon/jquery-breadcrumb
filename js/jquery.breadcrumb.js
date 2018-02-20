@@ -10,7 +10,8 @@
 		//se agregan valores por default cuando se carga la pagina de inicio
 			defaults = {
 				page:'index.html',
-				text:'title'
+				text:'',
+				icon: null
 			}
 
 			var options = $.extend({}, defaults, options);
@@ -25,10 +26,10 @@
 						//se obtiene la variable del almacenamiento
 						mapa = JSON.parse( sessionStorage["mapa"] );
 
-						var index = exist(mapa, options.text, options.page);
+						var index = exist(mapa, options.text, options.page, options.icon);
 
 						if(index == -1){
-							mapa.push( { title:options.text, href:options.page } );
+							mapa.push( { title:options.text, href:options.page, icon:options.icon } );
 						}
 						else
 						{
@@ -36,7 +37,7 @@
 						}
 					
 					} else {
-						mapa[0] = { title:options.text, href:options.page };
+						mapa[0] = { title:options.text, href:options.page, icon:options.icon };
 					}
 
 					//se actualiza la sesion del cliente
@@ -52,9 +53,22 @@
 						var strLink  = ""
 						//si es el ultimo elemento, lo activa, de lo contrario lo despliega como un acceso
 						if(index == lastIndex){
-							strLink ="<li class='breadcrumb-item active'>" + item.title + "</li>";
+							if(item.icon != null){
+							//strLink ="<li class='breadcrumb-item active'><p><span class='fa "+item.icon+"'>" + item.title + "</p></li>";
+							strLink ="<li class='breadcrumb-item active'><i class='fa "+item.icon+"'></i> " + item.title + "</li>";
+							}
+							else{
+								strLink ="<li class='breadcrumb-item active'>" + item.title + "</li>";
+							}
+
 						}else{
-							strLink ="<li class='breadcrumb-item'><a href='" + item.href + "'>" + item.title + "</a></li>";
+							if(item.icon != null){
+								//strLink ="<li class='breadcrumb-item'><a href='" + item.href + "'><span class='fa "+item.icon+"'>" + item.title + "</a></li>";
+								strLink ="<li class='breadcrumb-item'><a href='" + item.href + "'><i class='fa "+item.icon+"'></i> " + item.title + "</a></li>";
+							}else{
+								strLink ="<li class='breadcrumb-item'><a href='" + item.href + "'>" + item.title + "</a></li>";
+							}
+							
 						}
 
 						pageMap = pageMap + strLink;
@@ -62,11 +76,13 @@
 					 var strbreadcrup = "<ol class='breadcrumb'>"+pageMap+"</ol>";
 					 //lo despliega
 					 $(this).html(strbreadcrup);
-					}
+
+						}
+					//});
 	});
 }})}(jQuery));
 
 function exist(map, text, link){
-	return map.findIndex(x=>x.title==text);
+	return map.findIndex(x=>x.href==link);
 }
 
