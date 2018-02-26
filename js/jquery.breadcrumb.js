@@ -54,8 +54,7 @@
 						//si es el ultimo elemento, lo activa, de lo contrario lo despliega como un acceso
 						if(index == lastIndex){
 							if(item.icon != null){
-							//strLink ="<li class='breadcrumb-item active'><p><span class='fa "+item.icon+"'>" + item.title + "</p></li>";
-							strLink ="<li class='breadcrumb-item active'><i class='fa "+item.icon+"'></i> " + item.title + "</li>";
+							strLink ="<li class='breadcrumb-item active'><i class='"+item.icon+"'></i> " + item.title + "</li>";
 							}
 							else{
 								strLink ="<li class='breadcrumb-item active'>" + item.title + "</li>";
@@ -63,8 +62,7 @@
 
 						}else{
 							if(item.icon != null){
-								//strLink ="<li class='breadcrumb-item'><a href='" + item.href + "'><span class='fa "+item.icon+"'>" + item.title + "</a></li>";
-								strLink ="<li class='breadcrumb-item'><a href='" + item.href + "'><i class='fa "+item.icon+"'></i> " + item.title + "</a></li>";
+								strLink ="<li class='breadcrumb-item'><a href='" + item.href + "'><i class='"+item.icon+"'></i> " + item.title + "</a></li>";
 							}else{
 								strLink ="<li class='breadcrumb-item'><a href='" + item.href + "'>" + item.title + "</a></li>";
 							}
