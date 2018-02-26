@@ -31,12 +31,12 @@ Para asignarlo a un componente, agregar la siguiente línea dentro de un segment
 	</script>
 
 ```
-En su defecto para agregar un icono utilize la opción icon, y pasandole la clase del icono.
+En su defecto para agregar un icono utilice la opción icon, y pasandole la clase del icono.
 ```html
 
     <script type="text/javascript">
 		$(function(){
-			$("#breadcrumb").breadcrumb({ page: "index.html", text:"pagina inicio", icon:"fa fa-list" });
+			$("#breadcrumb").breadcrumb({ page: "index.html", icon:"fa fa-list" });
 		});
 	</script>
 
