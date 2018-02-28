@@ -29,6 +29,17 @@ Para asignarlo a un componente, agregar la siguiente línea dentro de un segment
 			$("#breadcrumb").breadcrumb({ page: "index.html", text:"pagina inicio" });
 		});
 	</script>
+
+```
+En su defecto para agregar un icono utilice la opción icon, y pasandole la clase del icono.
+```html
+
+    <script type="text/javascript">
+		$(function(){
+			$("#breadcrumb").breadcrumb({ page: "index.html", icon:"fa fa-list" });
+		});
+	</script>
+
 ```
 En algún componente del html, por ejemplo
 
